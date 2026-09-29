@@ -129,6 +129,3 @@ cd volleyball_introduction_html/HTML
 傅珮茵（Fu Pei-Yin）
 國立中興大學 資訊管理學系
 
-## 授權（License）
-
-本專案為課程期末報告，僅供學術展示與教學參考使用。
