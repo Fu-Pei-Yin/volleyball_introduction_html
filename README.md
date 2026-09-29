@@ -61,19 +61,11 @@ cd volleyball_introduction_html/HTML
 ## 技術（Technologies）
 
 - HTML5
-- 【請補充：CSS 框架／JavaScript 使用情形】
+- CSS 框架／JavaScript
 - 部署平台：Netlify
 
-## 限制與未來工作（Limitations and Future Work）
-
-- 【請補充：例如目前尚未支援行動裝置的完整排版、賽事資料為靜態內容等，依實際狀況填寫】
-- 【請補充：想加入的功能，例如自動輪轉動畫、發球順序模擬】
 
 ## 作者（Author）
 
 傅珮茵（Fu Pei-Yin）
 國立中興大學 資訊管理學系
-
-## 授權（License）
-
-【請補充：例如 MIT，或註明僅供課程與學術展示使用】
