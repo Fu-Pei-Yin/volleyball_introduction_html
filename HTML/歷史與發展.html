@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>排球--歷史與發展</title>
+    <link rel="icon" href="history.png" type="image/x-icon">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />	  
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>  
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <!--開啟新頁面-->
+    <script>function home() {window.open("index.html");}</script>
+    <script>function history_and_development() {window.open("歷史與發展.html");}</script>
+    <script>function rules() {window.open("規則.html");}</script>
+    <script>function responsibility() {window.open("職責介紹.html");}</script>
+    <script>function stations() {window.open("站位介紹.html");}</script>
+    <script>function competition() {window.open("賽事.html");}</script>
+    <script>function imitation() {window.open("站位模擬.html");}</script>
+    <script>function feedback() {window.open("回饋內容.html");}</script>
+    <!--側邊欄-->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+        document.querySelector('.main-content').addEventListener('click', function () {
+            if (window.innerWidth < 993) {
+                var instances = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+                instances.close();
+            }
+        });
+    });
+    </script>
+
+    <!--回饋表單-->
+    <script type="text/javascript">
+        function formresponse() {
+            var Options= document.forms["form1"]["options"].value;
+            var Content= document.forms["form1"]["content"].value;
+            if (Options==null || Options=="")
+            {alert("建議頁面不可為空白!");
+                return false;}
+            else if (Content==null || Content=="")
+            {alert("建議內容不可為空白!");
+                return false;}
+            else
+            {var MySubmit = "https://docs.google.com/forms/d/e/1FAIpQLSe163Y3G_K25wnFjeZCs7ZW3ELqDrScImQNI5cVO2qdzJju6Q/formResponse?entry.730818628=" + Options + "&entry.16081310=" + Content + "&submit=Submit";
+             
+            var NewOpen = window.open(MySubmit);}
+    }</script>
+
+  </head>
+<body>
+<!--頂部標題欄-->
+<nav class="black" role="navigation">
+  <div class="nav-wrapper container">
+      <a class="black-text" id="logo-container" onclick="home()" class="brand-logo"><img src="排球.png" height="70" alt="回到首頁"></a>
+      <ul style="width:max-content;padding:0;" class="right hide-on-med-and-down">
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="history_and_development()">歷史與發展</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="rules()">規則</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="responsibility()">職責介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="stations()">站位介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="competition()">賽事</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="imitation()">站位模擬</a></li>
+      </ul>
+      <a href="#" data-target="side-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<ul id="side-out" class="sidenav">
+  <li><a onclick="home()"><i class="material-icons left" class="blue-text">home</i>首頁</a></li>
+  <li><a onclick="history_and_development()"><i class="material-icons left" class="blue-text">history</i>發展與歷史</a></li>
+  <li><a onclick="rules()"><i class="material-icons left">sports</i>規則</a></li>
+  <li><a onclick="responsibility()"><i class="material-icons left">person_apron</i>職責介紹</a></li>
+  <li><a onclick="stations()"><i class="material-icons left">library_books</i>站位介紹</a></li>
+  <li><a onclick="competition()"><i class="material-icons left">emoji_events</i>賽事</a></li>
+  <li><a onclick="imitation()"><i class="material-icons left">sports_volleyball</i>站位模擬</a></li>
+  <li><a onclick="feedback()"><i class="material-icons left">chat_bubble</i>回饋內容</a></li>
+</ul>
+
+
+<!--網頁內容-->
+  <div id="content">
+    <a id="Original" class="waves-effect modal-trigger zoomed-text" href="#modal1">起源</a>
+    <style>
+      .zoomed-text {
+        font-size: 2em;
+      }
+    </style>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>起源</h4>
+        <p>排球起源於19世紀末，由威廉．摩根創造，並在國際上獲得廣泛的發展和普及。排球具有豐富的規則和技術，並且在全球範圍內廣泛受到喜愛和參與，透過排球運動，人們可以提升身體素質、培養社交技能，同時享受運動的樂趣</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">確定</a>
+      </div>
+    </div>
+      <div>
+        <li><b>起源地點:</b>最早起源於1895年的美國馬薩諸塞州，由威廉．摩根(William G.Morgan)創造</li>
+        <ol>
+          <img src="威廉．摩根.jpg">
+        </ol>
+        <li><b>創造目的:</b>摩根創造排球的目的是為了創造一個適合在室內場地進行的運動，以代替當時流行的籃球</li>
+        <li><b>命名由來:</b>最初排球被稱為<b>Mintonette</b>，後來被改為現在的名稱，源自於球場上球被傳遞的方式類似排列的方式</li>
+        <li><b>首次規則:</b>1900年，摩根編寫了排球的首份規則書，其中包括了<b>球場尺寸</b>、<b>球場人數</b>、<b>比賽時間</b>等規則</li>
+        <li><b>國際發展:</b>排球很快在美國國內流行起來，並於<b>20世紀初</b>傳播到其他國家。1992年，<b>國際牌求聯合會(FIVB)</b>成立，推動了排球的國際發展</li>
+        <ol>
+          <img src="FIVB.png">
+        </ol>
+        <li><b>奧運運動:</b>1964年，排球首次成為奧運會正式比賽項目，並在之後的奧運會上持續受到重視和發展</li>
+        <ol>
+          <img src="奧運項目.jpg">
+        </ol>
+        <li><b>變革與創新:</b>隨著時間的推移，排球的規則和比賽方式進行了多次變革和創新，以提高比賽的<b>競爭性</b>與<b>觀賞性</b></li>
+        <li><b>全球普及:</b>排球現在已成為全球性的運動，各國都有自己的排球聯盟及國家隊，並且在學校和社區中廣泛普及</li>
+        <li><b>戰術發展:</b>隨著排球的發展，各種技術和戰術也不斷出現，例如<b>扣球</b>、<b>舉球</b>、<b>欄網</b>等，使比賽更具<b>技巧性</b>與<b>觀賞性</b></li>
+        <ol>
+          <img src="戰術手勢.jpg">
+        </ol>
+        <li><b>排球規則:</b>排球的基本規則包括每隊<b>6名球員</b>，球場分為<b>2半</b>，球必須在<b>3次觸球內</b>重新傳遞到對方場地，並且每隊有<b>固定的</b>發球順序</li>
+        <ol>
+          <img src="完整排球場地.png" width="300">
+        </ol>
+        <li><b>排球比賽形式:</b>排球比賽通常是<b>三局兩勝制</b>或<b>五局三勝制</b>，每局<b>25分</b>，先到者獲勝，當三局兩勝(五局三勝)出現2比2(3比3)平局時，則<b>進行第五(七)局決勝</b></li>
+        <li><b>排球比賽級別:</b>排球比賽分為不同的級別，包刮<b>國際比賽</b>、<b>國家聯賽</b>、<b>學校比賽</b>等，每個級別都有相應的賽制和規則</li>
+        <li><b>排球裁判:</b>排球比賽由裁判負責監督，包刮<b>主裁判</b>、<b>副裁判</b>和<b>記錄員</b>，他們確保比賽的公平，並記錄比賽的比分和時間</li>
+        <ol>
+          <img src="裁判.jpg">
+        </ol>
+        <li><b>排球訓練:</b>排球運動需要球員具備良好的<b>體能</b>、<b>技術</b>和<b>團隊合作能力</b>，因為此訓練包括<b>基本技術練習</b>(傳球、發球、扣球、舉球)、<b>體能訓練</b>(力量、速度、靈活性)、<b>戰術訓練</b>(攻守轉換、配合默契)以及<b>比賽模擬</b></li>
+        <li><b>排球的益處:</b>排球運動不僅可以<b>提升身體素質</b>，還可以<b>培養團隊合作</b>、<b>溝通協調</b>、<b>領導能力</b>等重要<b>社交技能</b></li>
+        <br><br>
+        </div>
+    <a id="Development" class="waves-effect modal-trigger zoomed-text" href="#modal2">近年來發展</a>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>近年來發展</h4>
+        <p>排球運動在近年來得到了更多的關注和發展，注重平等性、科學化訓練、環保意識和社會責任，同時提供了更多的機會給球員參與和成長。排球運動不僅對身體健康有益，還具有教育價值和社會價值</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">確定</a>
+      </div>
+    </div>
+      <div>
+        <li><b>增加對女子排球的重視:</b>近年來，女子排球在<b>全球範圍內</b>得到了更多的關注和重視，許多國家和地區開展了<b>女子排球聯賽</b>和<b>錦標賽</b></li>
+        <ol>
+          <img src="女子排球.jpg">
+        </ol>
+        <li><b>技術和戰術的進步：</b>排球運動中的技術和戰術不斷進步，球員們更加注重<b>技巧的培養</b>和<b>戰術的應用</b>，使比賽更具<b>觀賞性</b>和<b>競爭力</b></li>
+        <li><b>科技在排球中的應用：</b>科技的發展也對排球產生了影響，例如使用<b>高速攝影機</b>和<b>數據分析</b>來改進球員的技術和戰術</li>
+        <ol>
+          <img src="數據分析.jpg">
+        </ol>
+        <li><b>全球排球聯賽的興起：</b>許多國家和地區<b>開展了自己的排球聯賽</b>，如<b>意大利的意甲聯賽</b>、<b>巴西的巴甲聯賽</b>等，這些聯賽提供了更多的比賽機會和舞台</li>
+        <ol>
+          <img src="義甲聯賽.png">
+        </ol>
+        <li><b>國際排球賽事的增加：</b>除了奧運會，國際排球賽事的數量也在增加，如<b>世界盃</b>、<b>世界錦標賽</b>、<b>世界巡迴賽</b>等，這些賽事吸引了全球球迷的關注</li>
+        <ol>
+          <img src="世界盃.png">
+        </ol>
+        <li><b>排球運動在學校和青少年中的普及：</b>越來越多的學校和青少年組織開展了排球運動，提供了更多的機會讓年輕人參與和享受這項運動</li>
+        <li><b>排球訓練和培訓體系的完善：</b>為了提高球員的水平，許多國家建立了<b>完善的排球訓練</b>和<b>培訓體系</b>，包括<b>訓練營</b>、<b>選拔制度</b>和<b>專業教練團隊</b>等</li>
+        <ol>
+          <img src="訓練營.jpg">
+        </ol>
+        <li><b>排球裁判和裁判培訓的重視：</b><b>裁判</b>在排球比賽中起著重要的角色，近年來對裁判的<b>培訓</b>和<b>提升</b>也得到了更多的關注和重視</li>
+        <ol>
+          <img src="裁判培訓.jpg">
+        </ol>
+        <li><b>排球比賽的規模和觀眾數量的增加：</b>排球比賽的<b>規模</b>和<b>觀眾數量</b>也在不斷增加，吸引了更多的觀眾和球迷參與和關注</li>
+        <li><b>排球運動的國際化：</b>排球運動在全球範圍內的<b>國際化程度</b>不斷提高，<b>球員和教練之間</b>的<b>交流</b>和<b>合作</b>更加頻繁</li>
+        <ol>
+          <img src="球員教練交流.jpg">
+        </ol>
+        <li><b>排球運動的社交媒體影響力：</b>社交媒體的興起使得排球運動的影響力得到了擴大，球員和球迷可以<b>更加方便地交流和分享信息</b></li>
+        <li><b>排球運動的商業價值：</b>排球運動的商業價值也在增加，<b>贊助商</b>和<b>廣告商</b>對排球賽事和球員的投資也在增加</li>
+        <ol>
+          <img src="贊助商.jpg">
+        </ol>
+        <li><b>排球運動的平等性和包容性：</b>近年來，排球運動越來越<b>注重平等性和包容性</b>，鼓勵<b>男女平等參與</b>，並提供平等的機會給所有人，無論<b>種族</b>、<b>性別</b>、<b>年齡</b>或<b>身體能力</b></li>
+        <li><b>排球訓練科學化：</b>排球訓練越來越科學化，<b>運動科學</b>和<b>運動醫學</b>的應用使得球員的訓練更加有效和安全</li>
+        <ol>
+          <img src="運動醫學.jpg">
+        </ol>
+        <li><b>排球裝備的改進：</b>排球裝備的技術不斷改進，例如<b>更輕量化的球</b>、<b>更舒適的鞋子</b>和<b>保護性更好的護具</b>，提高了球員的<b>表現</b>和<b>安全性</b></li>
+        <li> <b>排球運動的環保意識：</b>排球運動也開始關注環境保護，例如<b>減少賽事</b>和<b>訓練中的能源消耗</b>，推廣可持續發展的理念</li>
+        <li><b>排球運動的健康益處：</b>排球運動對身體健康有益，可以<b>增強心肺功能</b>、<b>提高協調能力</b>、<b>增加肌肉力量</b>，並有助於<b>減壓</b>和<b>提升心理健康</b></li>
+        <li> <b>排球運動的教育價值：</b>排球運動不僅是一項競技運動，還具有<b>教育價值</b>，可以<b>培養團隊合作</b>、<b>領導能力</b>、<b>自律性</b>和<b>適應能力</b>等重要素養</li>
+        <li> <b>排球運動的社區參與：</b>排球運動也在社區中得到廣泛參與，舉辦<b>社區排球比賽和活動</b>，促進社區凝聚力和社交互動</li>
+        <ol>
+          <img src="社區排球.jpg">
+        </ol>
+        <li><b>排球運動的國際交流：</b>排球運動促進了<b>不同國家和地區</b>之間的交流和合作，增進了<b>文化交流</b>和<b>友誼</b></li>
+        <li><b>排球運動的青少年培養：</b>排球運動在青少年中的普及和培養，有助於他們培養<b>健康的生活方式</b>和<b>良好的價值觀</b></li>
+        <li> <b>排球運動的慈善活動：</b>排球運動也積極參與慈善活動，舉辦<b>慈善比賽</b>和<b>捐贈</b>，回饋社會</li>
+        <br><br>
+        <br><br>
+      </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+        <div class="col l6 s12">
+            <h5 class="white-text">建議回饋</h5>
+            <form name="form1" action="javascript:formresponse();">		
+            <div class="row">
+                <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                    <p>建議選項</p>
+                    <select class="browser-default" name="options" type="text" class="validate">
+                        <option value="" disabled selected>請選擇建議頁面</option>
+                        <option value="首頁">首頁</option>
+                        <option value="歷史與發展">歷史與發展</option>
+                        <option value="規則">規則</option>
+                        <option value="職責介紹">職責介紹</option>
+                        <option value="站位介紹">站位介紹</option>
+                        <option value="賽事">賽事</option>
+                        <option value="站位模擬">站位模擬</option>
+                    </select>
+                </div>
+                <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                    <p>建議內容</p>
+                    <input placeholder="請輸入建議內容" name="content" type="text" class="validate">
+                </div>
+            </div>
+            <input type="submit" value="送出建議">
+            </form>
+        </div>
+        <div class="col l3 s12">
+            <h5 class="white-text">主要頁面連結</h5>
+                <ul>
+                <li><a class="white-text" onclick="home()">首頁</a></li>
+                <li><a class="white-text" onclick="history_and_development()">發展與歷史</a></li>
+                <li><a class="white-text" onclick="rules()">規則</a></li>
+                <li><a class="white-text" onclick="responsibility()">職責介紹</a></li>
+                <li><a class="white-text" onclick="stations()">站位介紹</a></li>
+                <li><a class="white-text" onclick="competition()">賽事</a></li>
+                <li><a class="white-text" onclick="imitation()">站位模擬</a></li>
+                <li><a class="white-text" onclick="feedback()">回饋內容</a></li>
+                </ul>
+        </div>
+        <div class="col l3 s12">
+            <h5 class="white-text">其他頁面連結</h5>
+            <ul>
+            <li><a class="white-text" href="歷史與發展.html#Original">起源</a></li>
+            <li><a class="white-text" href="歷史與發展.html#Development">近年來發展</a></li>
+            <li><a class="white-text" href="規則.html#Physical">男女排差異:身體素質</a></li>
+            <li><a class="white-text" href="規則.html#Skills">男女排差異:技術風格</a></li>
+            <li><a class="white-text" href="規則.html#Rule">男女排差異:比賽規則</a></li>
+            <li><a class="white-text" href="規則.html#Strength">男女排差異:比賽強度</a></li>
+            <li><a class="white-text" href="規則.html#Emphasize">男女排差異:球隊組成</a></li>
+            <li><a class="white-text" href="職責介紹.html#spiker">主攻手</a></li>
+            <li><a class="white-text" href="職責介紹.html#blocker">副攻手</a></li>
+            <li><a class="white-text" href="職責介紹.html#setter">舉球員</a></li>
+            <li><a class="white-text" href="職責介紹.html#libero">自由球員</a></li>
+            <li><a class="white-text" href="站位介紹.html#5-1">五一單舉球員</a></li>
+            <li><a class="white-text" href="站位介紹.html#4-2">四二雙舉前排</a></li>
+            <li><a class="white-text" href="站位介紹.html#6-2">六二雙舉後排</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <a class="brown-text text-lighten-3" onclick="home()">回到首頁</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.collapsible').collapsible();
+    $(".modal").modal();
+    $('.materialboxed').materialbox();
+    $(".parallax").parallax();
+    $('select').formSelect();
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 3 },
+        1000: { items: 5 }
+      }
+    });
+  });
+</script>
+</body>
+</html>

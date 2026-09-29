@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>排球--站位介紹</title>
+    <link rel="icon" href="stand.png" type="image/x-icon">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />	  
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>  
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--開啟新頁面-->
+    <script>function home() {window.open("index.html");}</script>
+    <script>function history_and_development() {window.open("歷史與發展.html");}</script>
+    <script>function rules() {window.open("規則.html");}</script>
+    <script>function responsibility() {window.open("職責介紹.html");}</script>
+    <script>function stations() {window.open("站位介紹.html");}</script>
+    <script>function competition() {window.open("賽事.html");}</script>
+    <script>function imitation() {window.open("站位模擬.html");}</script>
+    <script>function feedback() {window.open("回饋內容.html");}</script>
+    <!--側邊欄-->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+        document.querySelector('.main-content').addEventListener('click', function () {
+            if (window.innerWidth < 993) {
+                var instances = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+                instances.close();
+            }
+        });
+    });
+    </script>
+
+    <!--回饋表單-->
+    <script type="text/javascript">
+        function formresponse() {
+            var Options= document.forms["form1"]["options"].value;
+            var Content= document.forms["form1"]["content"].value;
+            if (Options==null || Options=="")
+            {alert("建議頁面不可為空白!");
+                return false;}
+            else if (Content==null || Content=="")
+            {alert("建議內容不可為空白!");
+                return false;}
+            else
+            {var MySubmit = "https://docs.google.com/forms/d/e/1FAIpQLSe163Y3G_K25wnFjeZCs7ZW3ELqDrScImQNI5cVO2qdzJju6Q/formResponse?entry.730818628=" + Options + "&entry.16081310=" + Content + "&submit=Submit";
+             
+            var NewOpen = window.open(MySubmit);}
+    }</script>
+
+</head>
+<body>
+
+<!--頂部標題欄-->
+<nav class="black" role="navigation">
+  <div class="nav-wrapper container">
+      <a class="black-text" id="logo-container" onclick="home()" class="brand-logo"><img src="排球.png" height="70" alt="回到首頁"></a>
+      <ul style="width:max-content;padding:0;" class="right hide-on-med-and-down">
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="history_and_development()">歷史與發展</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="rules()">規則</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="responsibility()">職責介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="stations()">站位介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="competition()">賽事</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="imitation()">站位模擬</a></li>
+      </ul>
+      <a href="#" data-target="side-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<ul id="side-out" class="sidenav">
+  <li><a onclick="home()"><i class="material-icons left" class="blue-text">home</i>首頁</a></li>
+  <li><a onclick="history_and_development()"><i class="material-icons left" class="blue-text">history</i>發展與歷史</a></li>
+  <li><a onclick="rules()"><i class="material-icons left">sports</i>規則</a></li>
+  <li><a onclick="responsibility()"><i class="material-icons left">person_apron</i>職責介紹</a></li>
+  <li><a onclick="stations()"><i class="material-icons left">library_books</i>站位介紹</a></li>
+  <li><a onclick="competition()"><i class="material-icons left">emoji_events</i>賽事</a></li>
+  <li><a onclick="imitation()"><i class="material-icons left">sports_volleyball</i>站位模擬</a></li>
+  <li><a onclick="feedback()"><i class="material-icons left">chat_bubble</i>回饋內容</a></li>
+</ul>
+
+
+<div id="content">
+  <div class="row">
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      .full-page{
+        height: 100vh;
+      }
+    </style>
+    <h2 col s12 m6 l3>站位介紹</h2>
+    <a href="#5-1" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 col s12 m6 l3">五一單舉球員</a>
+    <a href="#4-2" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 col s12 m6 l3">四二雙舉前排</a>
+    <a href="#6-2" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 col s12 m6 l3">六二雙舉後排</a>
+  </div>
+  <div>
+    <ol type="1">
+      <h5><li>前面數字是指攻擊手的數量</li></h5>
+      <h5><li>後面數字使指舉球員的數量</li></h5>  
+    </ol>
+    </div>
+    <h5>類別</h5>
+  <ol>
+    <style>
+      div{position: relative;}
+      h1{font-size: 25px;
+        position:absolute;}
+    </style>
+    <div id="5-1">
+    <h5><li>五一單舉球員</li></h5>
+      <div style="position:relative;">
+        <img src="半場排球場地.png" width=500>
+        <h1 style="left: 290px; top: -30px;color: blue;" id="setter1">舉球員1</h1>
+        <h1 style="left: 110px; top: -30px;color: white;" id="scorer1">攻擊手1</h1>
+        <h1 style="left: 200px; top: -30px;color: white;" id="scorer2">攻擊手2</h1>
+        <h1 style="left: 70px; top: 150px;color: white;" id="scorer3">攻擊手3</h1>
+        <h1 style="left: 200px; top: 250px;color: white;" id="scorer4">攻擊手4</h1>
+        <h1 style="left: 330px; top: 350px;color: white;" id="scorer5">攻擊手5</h1>
+      <ol type="A">
+        <li>擁有足夠的攻擊手數量</li>
+        <li>吃重舉球員的能力</li>
+        <li>當舉球員在前排時，開球後通常都會跑位到2號位</li>
+          <ol type="a">
+            <li>前排會有兩個攻擊手，能夠使用一個欄中和一個大砲</li>
+            <li>而當前排有三個攻擊手時，則可以使用一個欄中、一個大砲以及一個舉對</li>
+          </ol>
+        <li>當舉球員在後排時，通常會站位於靠近1號位的位置</li>
+          <ol type="a">
+            <li>因為此位置距離舉球位最近</li>
+            <li>舉球員之所以不換到6號位的原因在於6號位的球員經常需要退到底線處理被我方球員失誤的界外球</li>
+          </ol>
+      </ol>
+      </div>
+      </div>
+      <div id="4-2">
+    <h5><li>四二雙舉前排</li></h5>
+      <div style="position:relative;">
+        <img src="半場排球場地.png" width=500>
+        <h1 style="left: 200px; top: -30px;color: blue;" id="setter1">舉球員1</h1>
+        <h1 style="left: 200px; top: 300px;color: white;" id="setter2">舉球員2</h1>
+        <h1 style="left: 110px; top: -30px;color: white;" id="scorer1">攻擊手1</h1>
+        <h1 style="left: 290px; top: -30px;color: white;" id="scorer2">攻擊手2</h1>
+        <h1 style="left: 70px; top: 150px;color: white;" id="scorer3">攻擊手3</h1>
+        <h1 style="left: 330px; top: 150px;color: white;" id="scorer4">攻擊手4</h1>
+      </div>
+      <ol type="A">
+        <li>有兩個人分別擔任舉球員的職責</li>
+        <li>只要輪到其中一人到前排，就會跑位到中間做舉球</li>
+        <li>是一種既保險又能分工的戰術站位</li>
+          <ol type="a">
+            <li>因為對於舉球員來說，跑位不會太複雜</li>
+            <li>且能充分利用舉球員到攻擊手的配對來進行攻擊</li>
+          </ol>
+      </ol>
+      </div>
+      <div id="6-2">
+    <h5><li>六二雙舉後排</li></h5>
+      <div style="position:relative;">
+        <img src="半場排球場地.png" width=500>
+        <h1 style="left: 290px; top: -30px;color: blue;" id="setter1">舉球員1</h1>
+        <h1 style="left: 330px; top: 180px;color: blue;" id="setter2">舉球員2</h1>
+        <h1 style="left: 110px; top: -30px;color: white;" id="scorer1">攻擊手1</h1>
+        <h1 style="left: 200px; top: -30px;color: white;" id="scorer2">攻擊手2</h1>
+        <h1 style="left: 70px; top: 150px;color: white;" id="scorer3">攻擊手3</h1>
+        <h1 style="left: 200px; top: 350px;color: white;" id="scorer4">攻擊手4</h1>
+      </div>
+    <ol type="A">
+      <li>攻擊力強大的站位</li>
+      <li>前排永遠保持在3個攻擊手的狀態</li>
+      <li>當其中一個舉球員輪到前排時，換另一位後排的舉球員舉球</li>
+    </ol>
+  </ol>
+  </div>
+</div>
+
+<footer class="page-footer teal">
+  <div class="container">
+      <div class="row">
+      <div class="col l6 s12">
+          <h5 class="white-text">建議回饋</h5>
+          <form name="form1" action="javascript:formresponse();">		
+          <div class="row">
+              <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                  <p>建議選項</p>
+                  <select class="browser-default" name="options" type="text" class="validate">
+                      <option value="" disabled selected>請選擇建議頁面</option>
+                      <option value="首頁">首頁</option>
+                      <option value="歷史與發展">歷史與發展</option>
+                      <option value="規則">規則</option>
+                      <option value="職責介紹">職責介紹</option>
+                      <option value="站位介紹">站位介紹</option>
+                      <option value="賽事">賽事</option>
+                      <option value="站位模擬">站位模擬</option>
+                  </select>
+              </div>
+              <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                  <p>建議內容</p>
+                  <input placeholder="請輸入建議內容" name="content" type="text" class="validate">
+              </div>
+          </div>
+          <input type="submit" value="送出建議">
+          </form>
+      </div>
+      <div class="col l3 s12">
+          <h5 class="white-text">主要頁面連結</h5>
+              <ul>
+              <li><a class="white-text" onclick="home()">首頁</a></li>
+              <li><a class="white-text" onclick="history_and_development()">發展與歷史</a></li>
+              <li><a class="white-text" onclick="rules()">規則</a></li>
+              <li><a class="white-text" onclick="responsibility()">職責介紹</a></li>
+              <li><a class="white-text" onclick="stations()">站位介紹</a></li>
+              <li><a class="white-text" onclick="competition()">賽事</a></li>
+              <li><a class="white-text" onclick="imitation()">站位模擬</a></li>
+              <li><a class="white-text" onclick="feedback()">回饋內容</a></li>
+              </ul>
+      </div>
+      <div class="col l3 s12">
+          <h5 class="white-text">其他頁面連結</h5>
+          <ul>
+          <li><a class="white-text" href="歷史與發展.html#Original">起源</a></li>
+          <li><a class="white-text" href="歷史與發展.html#Development">近年來發展</a></li>
+          <li><a class="white-text" href="規則.html#Physical">男女排差異:身體素質</a></li>
+          <li><a class="white-text" href="規則.html#Skills">男女排差異:技術風格</a></li>
+          <li><a class="white-text" href="規則.html#Rule">男女排差異:比賽規則</a></li>
+          <li><a class="white-text" href="規則.html#Strength">男女排差異:比賽強度</a></li>
+          <li><a class="white-text" href="規則.html#Emphasize">男女排差異:球隊組成</a></li>
+          <li><a class="white-text" href="職責介紹.html#spiker">主攻手</a></li>
+          <li><a class="white-text" href="職責介紹.html#blocker">副攻手</a></li>
+          <li><a class="white-text" href="職責介紹.html#setter">舉球員</a></li>
+          <li><a class="white-text" href="職責介紹.html#libero">自由球員</a></li>
+          <li><a class="white-text" href="站位介紹.html#5-1">五一單舉球員</a></li>
+          <li><a class="white-text" href="站位介紹.html#4-2">四二雙舉前排</a></li>
+          <li><a class="white-text" href="站位介紹.html#6-2">六二雙舉後排</a></li>
+          </ul>
+      </div>
+      </div>
+  </div>
+  <div class="footer-copyright">
+      <div class="container">
+          <a class="brown-text text-lighten-3" onclick="home()">回到首頁</a>
+      </div>
+  </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+$(document).ready(function () {
+  $('.collapsible').collapsible();
+  $(".modal").modal();
+  $('.materialboxed').materialbox();
+  $(".parallax").parallax();
+  $('select').formSelect();
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 3 },
+      1000: { items: 5 }
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>排球--站位模擬</title>
+    <link rel="icon" href="vollyball.png" type="image/x-icon">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />	  
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>  
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <!--開啟新頁面-->
+    <script>function home() {window.open("index.html");}</script>
+    <script>function history_and_development() {window.open("歷史與發展.html");}</script>
+    <script>function rules() {window.open("規則.html");}</script>
+    <script>function responsibility() {window.open("職責介紹.html");}</script>
+    <script>function stations() {window.open("站位介紹.html");}</script>
+    <script>function competition() {window.open("賽事.html");}</script>
+    <script>function imitation() {window.open("站位模擬.html");}</script>
+    <script>function feedback() {window.open("回饋內容.html");}</script>
+    <!--側邊欄-->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+        document.querySelector('.main-content').addEventListener('click', function () {
+            if (window.innerWidth < 993) {
+                var instances = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+                instances.close();
+            }
+        });
+    });
+    </script>
+
+    <!--回饋表單-->
+    <script type="text/javascript">
+        function formresponse() {
+            var Options= document.forms["form1"]["options"].value;
+            var Content= document.forms["form1"]["content"].value;
+            if (Options==null || Options=="")
+            {alert("建議頁面不可為空白!");
+                return false;}
+            else if (Content==null || Content=="")
+            {alert("建議內容不可為空白!");
+                return false;}
+            else
+            {var MySubmit = "https://docs.google.com/forms/d/e/1FAIpQLSe163Y3G_K25wnFjeZCs7ZW3ELqDrScImQNI5cVO2qdzJju6Q/formResponse?entry.730818628=" + Options + "&entry.16081310=" + Content + "&submit=Submit";
+             
+            var NewOpen = window.open(MySubmit);}
+    }</script>
+
+  <!--隊伍資訊-->
+  <script>
+    function formResponse() {
+        var team1 = document.getElementById('team1').value;
+        var team1_first_player= document.getElementById('team1_first_player').value;
+        var team1_first_duty= document.getElementById('team1_first_duty').value;
+        var team1_second_player= document.getElementById('team1_second_player').value;
+        var team1_second_duty= document.getElementById('team1_second_duty').value;
+        var team1_thired_player= document.getElementById('team1_thired_player').value;
+        var team1_thired_duty= document.getElementById('team1_thired_duty').value;
+        var team1_forth_player= document.getElementById('team1_forth_player').value;
+        var team1_forth_duty= document.getElementById('team1_forth_duty').value;
+        var team1_fifth_player= document.getElementById('team1_fifth_player').value;
+        var team1_fifth_duty= document.getElementById('team1_fifth_duty').value;
+        var team1_sixth_player= document.getElementById('team1_sixth_player').value;
+        var team1_sixth_duty= document.getElementById('team1_sixth_duty').value;
+
+        var team2 = document.getElementById('team2').value;
+        var team2_first_player= document.getElementById('team2_first_player').value;
+        var team2_first_duty= document.getElementById('team2_first_duty').value;
+        var team2_second_player= document.getElementById('team2_second_player').value;
+        var team2_second_duty= document.getElementById('team2_second_duty').value;
+        var team2_thired_player= document.getElementById('team2_thired_player').value;
+        var team2_thired_duty= document.getElementById('team2_thired_duty').value;
+        var team2_forth_player= document.getElementById('team2_forth_player').value;
+        var team2_forth_duty= document.getElementById('team2_forth_duty').value;
+        var team2_fifth_player= document.getElementById('team2_fifth_player').value;
+        var team2_fifth_duty= document.getElementById('team2_fifth_duty').value;
+        var team2_sixth_player= document.getElementById('team2_sixth_player').value;
+        var team2_sixth_duty= document.getElementById('team2_sixth_duty').value;
+        
+        var displayInfoElement = document.getElementById('displayInfo');
+        displayInfoElement.innerHTML = `
+            <style>
+              div{position: relative;}
+              h1{font-size: 20px;
+                color: white;
+                position:absolute;}
+            </style>
+            
+            <div style="position:relative;">
+              <img src="完整排球場地.png" width=1000/>
+              <h1 style="left: 25px; top: -30px;">隊伍名稱:${team1}</h1>
+              <h1 style="left: 70px; top: 380px;color:black;">${team1_first_player}</h1>
+              <h1 style="left: 330px; top: 380px;color:black;">${team1_second_player}</h1>
+              <h1 style="left: 330px; top: 220px;color:black;">${team1_thired_player}</h1>
+              <h1 style="left: 330px; top: 60px;color:black;">${team1_forth_player}</h1>
+              <h1 style="left: 70px; top: 60px;color:black;">${team1_fifth_player}</h1>
+              <h1 style="left: 70px; top: 220px;color:black;">${team1_sixth_player}</h1>
+
+              <h1 style="left: 550px; top: -30px;">隊伍名稱:${team2}</h1>
+              <h1 style="left: 850px; top: 60px;color:black;">${team2_first_player}</h1>
+              <h1 style="left: 610px; top: 60px;color:black;">${team2_second_player}</h1>
+              <h1 style="left: 610px; top: 220px;color:black;">${team2_thired_player}</h1>
+              <h1 style="left: 610px; top: 380px;color:black;">${team2_forth_player}</h1>
+              <h1 style="left: 850px; top: 380px;color:black;">${team2_fifth_player}</h1>
+              <h1 style="left: 850px; top: 220px;color:black;">${team2_sixth_player}</h1>
+              <h1 style="left: 800px; top: -40px;"><button onclick="myFunction();">球員資訊查詢</button></h1>
+            </div>`;
+    }
+  </script>
+
+  <!--prompt-->
+  <script>
+    function myFunction() {
+      let name = prompt("輸入隊伍名稱或球員名稱").toLowerCase();
+      if (name == team1.value) {
+        alert("隊伍名稱:" + team1.value+"\n一號位:\n姓名:"+team1_first_player.value+"\n職責:"+team1_first_duty.value+"\n\n二號位:\n姓名:"+team1_second_player.value+"\n職責:"+team1_second_duty.value+"\n\n三號位:\n姓名:"+team1_thired_player.value+"\n職責:"+team1_thired_duty.value+"\n\n四號位:\n姓名:"+team1_forth_player.value+"\n職責:"+team1_forth_duty.value+"\n\n五號位:\n姓名:"+team1_fifth_player.value+"\n職責:"+team1_fifth_duty.value+"\n\n六號位:\n姓名:"+team1_sixth_player.value+"\n職責:"+team1_sixth_duty.value);
+      }
+      else if (name == team2.value) {
+        alert("隊伍名稱:" + team2.value+"\n一號位:\n姓名:"+team2_first_player.value+"\n職責:"+team2_first_duty.value+"\n\n二號位:\n姓名:"+team2_second_player.value+"\n職責:"+team2_second_duty.value+"\n\n三號位:\n姓名:"+team2_thired_player.value+"\n職責:"+team2_thired_duty.value+"\n\n四號位:\n姓名:"+team2_forth_player.value+"\n職責:"+team2_forth_duty.value+"\n\n五號位:\n姓名:"+team2_fifth_player.value+"\n職責:"+team2_fifth_duty.value+"\n\n六號位:\n姓名:"+team2_sixth_player.value+"\n職責:"+team2_sixth_duty.value);
+      }
+      else if (name == team1_first_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:一號位\n職責:"+team1_first_duty.value);
+      }
+      else if (name == team1_second_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:二號位\n職責:"+team1_second_duty.value);
+      }
+      else if (name == team1_thired_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:三號位\n職責:"+team1_thired_duty.value);
+      }
+      else if (name == team1_forth_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:四號位\n職責:"+team1_forth_duty.value);
+      }
+      else if (name == team1_fifth_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:五號位\n職責:"+team1_fifth_duty.value);
+      }
+      else if (name == team1_sixth_player.value) {
+        alert("所屬隊伍:"+team1.value+"\n站位:六號位\n職責:"+team1_sixth_duty.value);
+      }
+      else if (name == team2_first_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:一號位\n職責:"+team2_first_duty.value);
+      }
+      else if (name == team2_second_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:二號位\n職責:"+team2_second_duty.value);
+      }
+      else if (name == team2_thired_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:三號位\n職責:"+team2_thired_duty.value);
+      }
+      else if (name == team2_forth_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:四號位\n職責:"+team2_forth_duty.value);
+      }
+      else if (name == team2_fifth_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:五號位\n職責:"+team2_fifth_duty.value);
+      }
+      else if (name == team2_sixth_player.value) {
+        alert("所屬隊伍:"+team2.value+"\n站位:六號位\n職責:"+team2_sixth_duty.value);
+      }
+      else{alert('輸入錯誤')}
+    }
+  </script>
+
+  <!--送出隊伍資訊-->
+  <script>
+    var Confirm = function(){
+      let answer = confirm('是否確認送出資訊？');
+      if(answer){
+        formResponse();
+      }else{
+      }
+    }
+  </script>
+
+  
+  
+</head>
+<body>
+<!--頂部標題欄-->
+<nav class="black" role="navigation">
+  <div class="nav-wrapper container">
+      <a class="black-text" id="logo-container" onclick="home()" class="brand-logo"><img src="排球.png" height="70" alt="回到首頁"></a>
+      <ul style="width:max-content;padding:0;" class="right hide-on-med-and-down">
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="history_and_development()">歷史與發展</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="rules()">規則</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="responsibility()">職責介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="stations()">站位介紹</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="competition()">賽事</a></li>
+      <li style="width:125px;list-style:none;display:inline-block;text-align-last:justify;border:1px #008080 double;"><a class="teal lighten-1 white-text" onclick="imitation()">站位模擬</a></li>
+      </ul>
+      <a href="#" data-target="side-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<ul id="side-out" class="sidenav">
+  <li><a onclick="home()"><i class="material-icons left" class="blue-text">home</i>首頁</a></li>
+  <li><a onclick="history_and_development()"><i class="material-icons left" class="blue-text">history</i>發展與歷史</a></li>
+  <li><a onclick="rules()"><i class="material-icons left">sports</i>規則</a></li>
+  <li><a onclick="responsibility()"><i class="material-icons left">person_apron</i>職責介紹</a></li>
+  <li><a onclick="stations()"><i class="material-icons left">library_books</i>站位介紹</a></li>
+  <li><a onclick="competition()"><i class="material-icons left">emoji_events</i>賽事</a></li>
+  <li><a onclick="imitation()"><i class="material-icons left">sports_volleyball</i>站位模擬</a></li>
+  <li><a onclick="feedback()"><i class="material-icons left">chat_bubble</i>回饋內容</a></li>
+</ul>
+
+<div class="row">
+    <div class="row col l4 m6 s12">
+    <table style="width: 400px;">
+      <thead>
+        <tr>
+            <input placeholder="第一組名稱" id="team1" type="text" class="validate">
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>一號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_first_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_first_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>二號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_second_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_second_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>三號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_thired_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_thired_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>四號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_forth_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_forth_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>五號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_fifth_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_fifth_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>六號位</td>
+          <td>
+             <input placeholder="球員名稱" id="team1_sixth_player" type="text" class="validate">
+          </td>
+          <td>
+              <select class="browser-default" id="team1_sixth_duty" type="text" class="validate">
+                  <option value="" disabled selected>球員職責</option>
+                  <option value="主攻手">主攻手</option>
+                  <option value="副攻手">副攻手</option>
+                  <option value="舉球員">舉球員</option>
+                  <option value="自由球員">自由球員</option>
+              </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    </div>
+    <div class="row col l4 m6 s12">
+      <table style="width: 400px;">
+        <thead>
+          <tr>
+            <input placeholder="第二組名稱" id="team2" type="text" class="validate">
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>一號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_first_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_first_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>二號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_second_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_second_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>三號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_thired_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_thired_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>四號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_forth_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_forth_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>五號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_fifth_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_fifth_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td>六號位</td>
+            <td>
+               <input placeholder="球員名稱" id="team2_sixth_player" type="text" class="validate">
+            </td>
+            <td>
+                <select class="browser-default" id="team2_sixth_duty" type="text" class="validate">
+                    <option value="" disabled selected>球員職責</option>
+                    <option value="主攻手">主攻手</option>
+                    <option value="副攻手">副攻手</option>
+                    <option value="舉球員">舉球員</option>
+                    <option value="自由球員">自由球員</option>
+
+                </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      </div>
+      <div class="row col l4 m6 s12">
+        <h5><button type="button" onclick="Confirm();">送出資訊</button></h5>
+      </div>
+      
+</div>    
+<div id="displayInfo"></div>
+
+
+
+
+
+
+
+<footer class="page-footer teal">
+  <div class="container">
+      <div class="row">
+      <div class="col l6 s12">
+          <h5 class="white-text">建議回饋</h5>
+          <form name="form1" action="javascript:formresponse();">		
+          <div class="row">
+              <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                  <p>建議選項</p>
+                  <select class="browser-default" name="options" type="text" class="validate">
+                      <option value="" disabled selected>請選擇建議頁面</option>
+                      <option value="首頁">首頁</option>
+                      <option value="歷史與發展">歷史與發展</option>
+                      <option value="規則">規則</option>
+                      <option value="職責介紹">職責介紹</option>
+                      <option value="站位介紹">站位介紹</option>
+                      <option value="賽事">賽事</option>
+                      <option value="站位模擬">站位模擬</option>
+                  </select>
+              </div>
+              <div class="input-field col s6" name="form1" action="javascript:formresponse();">
+                  <p>建議內容</p>
+                  <input placeholder="請輸入建議內容" name="content" type="text" class="validate">
+              </div>
+          </div>
+          <input type="submit" value="送出建議">
+          </form>
+      </div>
+      <div class="col l3 s12">
+          <h5 class="white-text">主要頁面連結</h5>
+              <ul>
+              <li><a class="white-text" onclick="home()">首頁</a></li>
+              <li><a class="white-text" onclick="history_and_development()">發展與歷史</a></li>
+              <li><a class="white-text" onclick="rules()">規則</a></li>
+              <li><a class="white-text" onclick="responsibility()">職責介紹</a></li>
+              <li><a class="white-text" onclick="stations()">站位介紹</a></li>
+              <li><a class="white-text" onclick="competition()">賽事</a></li>
+              <li><a class="white-text" onclick="imitation()">站位模擬</a></li>
+              <li><a class="white-text" onclick="feedback()">回饋內容</a></li>
+              </ul>
+      </div>
+      <div class="col l3 s12">
+          <h5 class="white-text">其他頁面連結</h5>
+          <ul>
+          <li><a class="white-text" href="歷史與發展.html#Original">起源</a></li>
+          <li><a class="white-text" href="歷史與發展.html#Development">近年來發展</a></li>
+          <li><a class="white-text" href="規則.html#Physical">男女排差異:身體素質</a></li>
+          <li><a class="white-text" href="規則.html#Skills">男女排差異:技術風格</a></li>
+          <li><a class="white-text" href="規則.html#Rule">男女排差異:比賽規則</a></li>
+          <li><a class="white-text" href="規則.html#Strength">男女排差異:比賽強度</a></li>
+          <li><a class="white-text" href="規則.html#Emphasize">男女排差異:球隊組成</a></li>
+          <li><a class="white-text" href="職責介紹.html#spiker">主攻手</a></li>
+          <li><a class="white-text" href="職責介紹.html#blocker">副攻手</a></li>
+          <li><a class="white-text" href="職責介紹.html#setter">舉球員</a></li>
+          <li><a class="white-text" href="職責介紹.html#libero">自由球員</a></li>
+          <li><a class="white-text" href="站位介紹.html#5-1">五一單舉球員</a></li>
+          <li><a class="white-text" href="站位介紹.html#4-2">四二雙舉前排</a></li>
+          <li><a class="white-text" href="站位介紹.html#6-2">六二雙舉後排</a></li>
+          </ul>
+      </div>
+      </div>
+  </div>
+  <div class="footer-copyright">
+      <div class="container">
+          <a class="brown-text text-lighten-3" onclick="home()">回到首頁</a>
+      </div>
+  </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+$(document).ready(function () {
+$('.collapsible').collapsible();
+$(".modal").modal();
+$('.materialboxed').materialbox();
+$(".parallax").parallax();
+$('select').formSelect();
+$(".owl-carousel").owlCarousel({
+loop: true,
+margin: 10,
+nav: true,
+responsive: {
+  0: { items: 1 },
+  600: { items: 3 },
+  1000: { items: 5 }
+}
+});
+});
+</script>
+</body>
+</html>
